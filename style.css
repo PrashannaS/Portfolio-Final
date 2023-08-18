@@ -1,0 +1,378 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title span {
+  border-bottom: 2px solid black;
+}
+
+.wrapper {
+  background: var(--body-bg);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  /* padding: auto; */
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------ root variables ------- */
+
+:root {
+  --color-orange: orange;
+  --color-dark: rgb(34, 32, 32);
+
+  --body-bg: white;
+  --text-color: var(var(--color-dark));
+  --border-color: var(--color-dark);
+
+  /* dark mode --  */
+  --dark-bg: var(var(--color-dark));
+  --dark-text-color: white;
+  --dark-border-color: white;
+}
+
+/* --- dark mode --  */
+
+/* --- header --  */
+
+header {
+  box-shadow: 0 0 10px 5px gray;
+  position: sticky;
+  top: 0;
+  background: var(--body-bg);
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+#darkMode {
+  display: none;
+}
+.dark-mode-switch {
+  position: fixed;
+  top: 8rem;
+  left: 3rem;
+}
+
+.dark-mode-switch:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+/* ----- dark mode activation ----  */
+
+#darkMode:checked + .wrapper {
+  --body-bg: var(--color-dark);
+  --text-color: var(--dark-text-color);
+  /* color: var(--dark-text-color); */
+  --border-color: var(--dark-border-color);
+}
+
+.logo {
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.logo > div:nth-child(1) {
+  font-weight: bolder;
+  margin-right: 1rem;
+}
+
+.line::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+
+  position: absolute;
+  left: 45%;
+  background: var(--color-orange);
+}
+
+.navigation {
+  list-style: none;
+}
+
+.navigation li a:hover {
+  color: var(--color-orange);
+  transition: all 0.5s;
+}
+
+/* ============ hero section ==========  */
+
+.hero-section {
+  padding-top: 10rem;
+  color: var(--text-color);
+}
+
+.hero {
+  grid-template-areas: "left right";
+  background: var(--color-orange);
+  padding: 0 2rem;
+}
+
+.left {
+  grid-area: left;
+
+  justify-content: center;
+  align-items: center;
+  margin-left: 10vw;
+  flex-direction: column;
+}
+
+.left .name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.left button {
+  background: var(--dark-bg);
+  padding: 10px 2rem;
+  border-radius: 2rem;
+  color: var(--body-bg);
+}
+
+.left .tag {
+  font-size: 2.2rem;
+  font-weight: bolder;
+  letter-spacing: 5px;
+}
+
+.right {
+  grid-area: right;
+  justify-content: baseline;
+  align-items: center;
+  margin-top: -4rem;
+}
+
+.right img {
+  height: 105%;
+  /* box-shadow: 10px black; */
+}
+
+/* ============= banner ==========  */
+
+.banner {
+  background: rgb(237, 154, 59);
+  margin-top: 7rem;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 100px;
+}
+
+.banner .info-divider {
+  background: greenyellow;
+  width: 2px;
+  height: 50px;
+}
+
+.banner .info-content .icon-container {
+  background: var(--color-orange);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .info-content .icon-container i {
+  font-size: 2rem;
+  color: aliceblue;
+}
+
+.banner .info-content span {
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.banner .info-content p {
+  color: white;
+}
+
+/* ===== skills ===  */
+
+.skills {
+  background: rgba(237, 154, 59, 0);
+  margin-top: 7rem;
+  padding: 4rem;
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills .icon {
+  flex-direction: column;
+  font-size: larger;
+  text-align: center;
+}
+
+.skills .icon i {
+  font-size: 150px;
+  padding: 0 1rem;
+}
+
+/* ====== Projects =====  */
+
+.projects {
+  margin-top: 3rem;
+  padding: 7rem 0;
+}
+
+.projects .project-container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.project-card {
+  box-shadow: -1px 14px 20px 8px gray;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.project-card .top img {
+  width: 100%;
+}
+
+/* ==== section ====  */
+
+.about {
+  background: rgba(206, 141, 18, 0.511);
+  padding-top: 7rem 0;
+}
+
+.about-content {
+  margin-top: 3rem;
+}
+
+.about-content .myImg {
+  width: 60%;
+}
+
+.about-content.myImg img {
+  min-width: 350px;
+  max-width: 400px;
+}
+
+.about-content .my-bio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: Algerian;
+}
+
+.my-bio p:nth-child(4) {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+}
+
+.my-bio .tag {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.my-bio .tag + div span {
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+}
+
+.my-bio .tag + div span:hover {
+  cursor: pointer;
+  background: gray;
+}
+
+/* contact  */
+
+.contact {
+  background: rgb(238, 156, 50);
+  padding: 5rem;
+  margin-top: 2rem;
+}
+
+.contact .social {
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.contact .or {
+  padding: 3rem;
+  font-size: xx-large;
+}
+
+.contact .mail {
+  background: var(--color-dark);
+  border-radius: 1rem;
+  justify-content: center;
+  color: white;
+  margin: 0 10rem;
+  /* padding: 0 6rem; */
+}
+
+.contact .mail button {
+  background: var(--dark-bg);
+  padding: 10px 1rem;
+  border-radius: 2rem;
+  color: var(--body-bg);
+}
+
+/* ==== footer ===  */
+
+footer {
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+footer .top-footer {
+  justify-content: center;
+}
+
+footer .top-footer .footer-left ul li {
+  list-style: none;
+  padding-top: 10px;
+}
+
+footer .top-footer .footer-right ul li {
+  list-style: none;
+  padding-top: 10px;
+}
+
+.footer-bottom {
+  background: black;
+  color: white;
+  justify-content: center;
+  padding: 2rem;
+}
