@@ -16,6 +16,15 @@
     <title>Document</title>
   </head>
   <body>
+<div id="progress">
+  <span id="progress-value"><i class="fa-solid fa-angle-up"></i></span>
+</div>
+
+
+    <!-- go to up button  -->
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-angle-up"></i> </button>
+<!--  -->
     <input type="checkbox" id="darkMode" />
     <div class="wrapper">
       <!-- dark mode checkbox  -->
@@ -33,14 +42,26 @@
 
           <div class="menu">
             <ul class="flex navigation">
-              <li><a href="">Home</a></li>
-              <li><a href="">Skill</a></li>
-              <li><a href="">Projects</a></li>
-              <li><a href="">About</a></li>
-              <li><a href="">Contact</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#skills">Skill</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#abouts">About</a></li>
+              <li><a href="#contacts">Contact</a></li>
+              <!-- <div class="topnav">
+                <a href="#home" class="active"></a>
+                <div id="myLinks">
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
+              </div> -->
             </ul>
           </div>
         </div>
+        
       </header>
 
       <!-- hero  -->
@@ -208,15 +229,17 @@
             </div>
           </div>
         </section>
+
+
         <!-- about me  -->
 
-        <section class="about" id="about">
+        <section class="about" id="abouts">
           <h2 class="title"><span>About Me</span></h2>
           <div class="container flex about-content">
             <div class="myImg">
               <img src="./assets/mypic.png" alt="my casual photo" />
             </div>
-            <div class="my-bio">
+            <div class="my-bio container">
               <h2>Prashanna R. Shrestha</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
@@ -234,8 +257,8 @@
 
               <div>
                 <div class="tag">Intrest</div>
-                <div class="flex">
-                  <span>coding </span>
+                <div class="hobby flex container ">
+                  <span>Coding </span>
                   <span>Football</span>
                   <span>Reading Books</span>
                   <span>Sleeping</span>
@@ -247,7 +270,7 @@
 
         <!-- contact me  -->
 
-        <section class="contact container">
+        <section class="contact container" id="contacts">
           <h2 class="title">Get In Touch</h2>
           <div class="social flex">
             <div class="contacts flex">
@@ -257,7 +280,7 @@
               <i class="fa-brands fa-square-instagram"></i>
             </div>
             <div class="contacts flex">
-              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-github"></i>
             </div>
             <div class="contacts flex">
               <i class="fa-brands fa-linkedin"></i>
@@ -265,22 +288,23 @@
           </div>
 
           <h2 class="title or">OR</h2>
-
+<a href="mailto:sprashanna007@gmail.com">
           <div class="mail flex">
             <p>Sprashanna007@gmail.com</p>
             <button><i class="fa-solid fa-paper-plane"></i></button>
           </div>
+        </a>
         </section>
 
         <!-- footer  -->
 
-        <footer class="footer container flex">
+        <footer class="footer container">
           <div class="top-footer container flex">
             <div class="footer-left">
               <ul>
                 <li style="font-size: 2rem; padding-bottom: 1rem">LINKS</li>
-                <li>Home</li>
-                <li>Skills</li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Skills</a></li>
                 <li>Projets</li>
                 <li>Contacts</li>
               </ul>
@@ -293,19 +317,23 @@
                 </li>
                 <li>Facebook</li>
                 <li>Youtube</li>
-                <li>Linkdn</li>
+                <li>LinkedIn</li>
                 <li>Github</li>
               </ul>
             </div>
           </div>
+<hr>
+          <div class="footer-bottom flex container">
+            <p> 
+              Copyright © Sprashanna 2023 All rights reserved.</p>
+            </p>
+          </div>
           
         </footer>
-        <div class="footer-bottom flex container">
-          <p> 
-            Copyright © Sprashanna 2022 All rights reserved.</p>
-          </p>
-        </div>
+        
       </section>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
